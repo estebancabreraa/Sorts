@@ -12,8 +12,7 @@ import java.util.Vector;
  * @author Revilo
  * @param <E> generic
  */
-public class StackVector<E>
-    implements Stack<E> {
+public class StackVector<E> implements Stack<E> {
     
     protected Vector<E> data;
     
