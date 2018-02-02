@@ -1,4 +1,5 @@
 package calculadora;
+import java.util.ArrayList;
 import java.util.Vector;
 
 /*
@@ -13,69 +14,35 @@ import java.util.Vector;
  * @param <E> generic
  */
 public class StackVector<E> implements Stack<E> {
+ protected ArrayList<E> data;
     
-    protected Vector<E> data;
-    
-    public StackVector()
-     // post: constructs a new, empty stack
-    {
-        data = new Vector<E>();
+    public StackVector(){
+        data = new ArrayList<E>();
     }
-    /**
-     * @param item
-    * 
-    */
+    
     @Override
-    public void push(E item)
-	// post: the value is added to the stack
-	//          will be popped next if no intervening push
-	{
-		data.add(item);
-	}
+    public void push(E item) {
+        data.add(item);
+    }
 
-    /**
-     *
-     * @return most recently pushed item
-     */
     @Override
-	public E pop()
-	// pre: stack is not empty
-	// post: most recently pushed item is removed and returned
-	{
-		return data.remove(size()-1);
-	}
+    public E pop() {
+        return data.remove(size()-1);
+    }
 
-    /**
-     *
-     * @return top value (next to be popped)
-     */
     @Override
-	public E peek()
-	// pre: stack is not empty
-	// post: top value (next to be popped) is returned
-	{
-		return data.get(size() - 1);
-	}
-	
-    /**
-     *
-     * @return returns the number of elements in the stack
-     */
+    public E peek() {
+        return data.get(size()-1);
+    }
+
     @Override
-	public int size()
-	// post: returns the number of elements in the stack
-	{
-		return data.size();
-	}
-  
-    /**
-     *
-     * @return returns true if and only if the stack is empty
-     */
+    public boolean empty() {
+        return size()== 0;
+    }
+
     @Override
-	public boolean empty()
-	// post: returns true if and only if the stack is empty
-	{
-		return size() == 0;
-	}
+    public int size() {
+        return data.size();
+    }
+    
 }

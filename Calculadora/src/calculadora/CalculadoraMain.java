@@ -11,11 +11,13 @@ package calculadora;
  */
 public class CalculadoraMain {
 
+    public static Calculadora calculadora = new Calculadora();
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println(calculadora.calcular("12+4*3+"));
+        //hOLA COMO ESTAS
     }
     
 }
