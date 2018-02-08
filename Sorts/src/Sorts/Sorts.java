@@ -17,13 +17,13 @@ public class Sorts {
 	 * @param nums
 	 * @return int []
 	 */
-	public int[] gnomeSort(int[] nums){ 
+	public Comparable[] gnomeSort(Comparable[] nums){ 
 	    int index=1;
 	    int n = nums.length;
-	    int temp;
+	    Comparable temp;
 	    while(index<n){ 
 	    	
-	    	if(nums[index]<nums[index-1]){ 
+	    	if(nums[index].compareTo(nums[index-1]) < 0){ 
 		    temp=nums[index];
 		    nums[index]=nums[index-1];
 		    nums[index-1]=temp;
@@ -39,14 +39,14 @@ public class Sorts {
 	    return(nums);
 	}
         
-        public int[] radixSort(int cant, int ...numeros){
+        public int[] radixSort(Comparable[] cant, int ...numeros){
 		for(int i=1; i<6;i++){
 			Integer posiciones[][]= new Integer[10][30000];
 			Integer CantNum[]= new Integer[10];
 			for(int o=0;o<10;o++){
 				CantNum[o]=0;
 			}
-			for(int o=0; o<cant;o++){
+			for(int o=0; o<cant.length;o++){
 				int entero=(int) ((int)(numeros[o] % Math.pow(10, i) - numeros[o] % Math.pow(10, i-1))  /Math.pow(10, i-1));
 				posiciones[entero][CantNum[entero]]=numeros[o];
 				CantNum[entero]=CantNum[entero]+1;
