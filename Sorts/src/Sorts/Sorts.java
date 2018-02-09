@@ -5,12 +5,24 @@
  */
 package Sorts;
 
+import java.util.Random;
+
 /**
  *
  * @author esteb
  */
 public class Sorts {
-    
+        
+        public static Comparable[] crearArreglo(int n){
+            Comparable[] newArray = null;
+            for (int i = 0; i < n; i++){
+                Random rn = new Random();
+                Integer randomN = rn.nextInt(100) + 1;
+                newArray[i] = randomN;
+            }
+            return newArray;
+        }
+        
         public Comparable[] bubbleSort(Comparable[] nums){
             Comparable aux;
             for (int i = 1; i < nums.length - 1; i++){
@@ -93,6 +105,7 @@ public class Sorts {
 				CantNum[entero]=CantNum[entero]+1;
 				
 			}
+                        
 			
 			int x=0;
 			for(int o=0; o<10;o++){				

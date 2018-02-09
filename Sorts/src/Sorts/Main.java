@@ -5,17 +5,53 @@
  */
 package Sorts;
 
+import java.util.Scanner;
+
 /**
  *
  * @author esteb
  */
 public class Main {
-
+    
+    private static Scanner sc = new Scanner(System.in);
+    
+    public static Sorts sorts = new Sorts();
+    public static Comparable[] aOrdenar = null;
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("Ingrese la cantidad de elementos del arreglo:");
+        String cantidad = sc.nextLine();
+       
+        aOrdenar = Sorts.crearArreglo(Integer.parseInt(cantidad));
+        
+        System.out.println("Seleccione el sort para ordenar:");
+        System.out.println("1. Gnome");
+        System.out.println("2. Merge sort");
+        System.out.println("3. Quick sort");
+        System.out.println("4. Radix");
+        System.out.println("5. Bubble");
+        
+        String nSort = sc.nextLine();
+        switch (nSort){
+            case "1":
+                    sorts.gnomeSort(aOrdenar);
+                break;
+            case "2":
+                    
+                break;
+            case "3":
+                    sorts.quickSort(aOrdenar, 1, aOrdenar.length);
+                break;
+            case "4":
+                    sorts.radixSort(aOrdenar, aOrdenar.length);
+                break;
+            case "5":
+                    sorts.bubbleSort(aOrdenar);
+                break;
+                
+        }
     }
     
 }
