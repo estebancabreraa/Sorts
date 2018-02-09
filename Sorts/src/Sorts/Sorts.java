@@ -11,7 +11,48 @@ package Sorts;
  */
 public class Sorts {
     
-    
+        public Comparable[] bubbleSort(Comparable[] nums){
+            Comparable aux;
+            for (int i = 1; i < nums.length - 1; i++){
+                for (int o = i + 1; o < nums.length;  o++){
+                    if (nums[o].compareTo(nums[i]) < 0){
+                        aux = nums[i];
+                        nums[i] = nums[o];
+                        nums[o] = aux;
+                    }
+                }
+            }
+            return nums;
+        }
+        
+        public Comparable[] quickSort(Comparable[] nums, int li, int lf){
+            Comparable element;
+            Comparable[] l1 = null, l2 = null;
+            int t1 = 0, t2 = 0;
+            if (lf > li){
+                element = nums[li];
+                for (int i = li + 1; i <= lf; i++){
+                    if (nums[i].compareTo(element) < 0){
+                        t1++;
+                        l1[t1] = nums[i];
+                    } else {
+                        t2++;
+                        l2[t2] = nums[i];
+                    }
+                }
+                for (int o = 1; o <= t1; o++){
+                    nums[li + o - 1] = l1[o];
+                }
+                nums[li + t1] = element;
+                for (int u = 1; u <= t2; u++){
+                    nums[li + t1 + u] = l2[u];
+                }
+                quickSort(nums, li, li + t1 - 1);
+                quickSort(nums, li + t1 + 1, lf);
+            }
+            return nums;
+        }
+        
         /**
 	 * Este Sort ordena los numeros del arreglo comparando pares y viendo cual es mayor.
 	 * @param nums
