@@ -6,6 +6,7 @@
 package Sorts;
 
 import java.util.Random;
+import java.util.Vector;
 
 /**
  *
@@ -13,15 +14,7 @@ import java.util.Random;
  */
 public class Sorts {
         
-        public static Comparable[] crearArreglo(int n){
-            Comparable[] newArray = null;
-            for (int i = 0; i < n; i++){
-                Random rn = new Random();
-                Integer randomN = rn.nextInt(100) + 1;
-                newArray[i] = randomN;
-            }
-            return newArray;
-        }
+
         
         public Comparable[] bubbleSort(Comparable[] nums){
             Comparable aux;

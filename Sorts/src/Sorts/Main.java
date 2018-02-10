@@ -24,8 +24,7 @@ public class Main {
         System.out.println("Ingrese la cantidad de elementos del arreglo:");
         String cantidad = sc.nextLine();
        
-        aOrdenar = Sorts.crearArreglo(Integer.parseInt(cantidad));
-        
+      
         System.out.println("Seleccione el sort para ordenar:");
         System.out.println("1. Gnome");
         System.out.println("2. Merge sort");
