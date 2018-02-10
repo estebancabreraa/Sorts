@@ -1,19 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Sorts;
 
-import java.util.Arrays;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Random;
+
 /**
- * @author Esteban Cabrera
- * @author Oliver mazariegos
- * Esta clase contiene el tipo de ordenamiento Gnome Sort que ordenara un arreglo de numeros
+ *
+ * @author Revilo
  */
-public class gnomeSort {
-	
-    /**
-     *
-     * @param args
-     */
+class gnomeSort {
+    
     public static void main(String[] args){
             gnomeSort app = new gnomeSort();
             
@@ -78,6 +80,5 @@ public class gnomeSort {
         }  
             return result;
         }
-				
+    
 }
-
