@@ -10,8 +10,11 @@ import java.util.Random;
  */
 public class gnomeSort {
 	
-        
-        public static void main(String[] args){
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args){
             gnomeSort app = new gnomeSort();
             
             int[] input = app.generateRandomNumbers(3000);

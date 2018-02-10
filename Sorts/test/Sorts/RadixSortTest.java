@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author Revilo
  */
-public class MainTest {
+public class RadixSortTest {
     
-    public MainTest() {
+    public RadixSortTest() {
     }
     
     @BeforeClass
@@ -28,13 +28,17 @@ public class MainTest {
     }
 
     /**
-     * Test of main method, of class Main.
+     * Test of radixSort method, of class RadixSort.
      */
     @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Main.main(args);
+    public void testRadixSort() {
+        System.out.println("radixSort");
+        Comparable[] cant = null;
+        int[] numeros = null;
+        RadixSort instance = new RadixSort();
+        int[] expResult = null;
+        int[] result = instance.radixSort(cant, numeros);
+        assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
