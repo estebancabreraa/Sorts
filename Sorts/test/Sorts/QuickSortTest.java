@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author Revilo
  */
-public class RadixSortTest {
+public class QuickSortTest {
     
-    public RadixSortTest() {
+    public QuickSortTest() {
     }
     
     @BeforeClass
@@ -28,42 +28,45 @@ public class RadixSortTest {
     }
 
     /**
-     * Test of main method, of class RadixSort.
+     * Test of main method, of class QuickSort.
      */
     @Test
     public void testMain() {
         System.out.println("main");
         String[] args = null;
-        RadixSort.main(args);
+        QuickSort.main(args);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of getMax method, of class RadixSort.
+     * Test of QuickSort method, of class QuickSort.
      */
     @Test
-    public void testGetMax() {
-        System.out.println("getMax");
-        int[] arr = null;
-        int n = 0;
-        int expResult = 0;
-        int result = RadixSort.getMax(arr, n);
-        assertEquals(expResult, result);
+    public void testQuickSort() {
+        System.out.println("QuickSort");
+        int[] numeros = null;
+        QuickSort instance = new QuickSort();
+        int[] expResult = null;
+        int[] result = instance.QuickSort(numeros);
+        assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
 
     /**
-     * Test of countSort method, of class RadixSort.
+     * Test of quicksort2 method, of class QuickSort.
      */
     @Test
-    public void testCountSort() {
-        System.out.println("countSort");
-        int[] arr = null;
-        int n = 0;
-        int exp = 0;
-        RadixSort.countSort(arr, n, exp);
+    public void testQuicksort2() {
+        System.out.println("quicksort2");
+        int[] numeros = null;
+        int izq = 0;
+        int der = 0;
+        QuickSort instance = new QuickSort();
+        int[] expResult = null;
+        int[] result = instance.quicksort2(numeros, izq, der);
+        assertArrayEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
