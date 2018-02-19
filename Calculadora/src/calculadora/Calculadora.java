@@ -19,6 +19,7 @@ public class Calculadora implements CalculadoraI{
         
         String digitos = "0123456789";
         boolean error = false;
+        boolean espacio = false;
         
         if (verificarFormato(cadena)){
             
@@ -26,50 +27,59 @@ public class Calculadora implements CalculadoraI{
                 stackOperandos.pop();
             }
             
-            for (int i = 0; i < cadena.length(); i++){
+            for (int i = 0; i < cadena.length(); i++){ //C:\Users\esteb\Desktop\prueba.txt
+                
                 
                 String c = cadena.substring(i, i+1);
                 
                 double valorResultado, valor1, valor2;
                 
+                espacio = false; 
+                
                 switch (c){
                     case "0":break; case"1":break;case"2":break;case"3":break;case"4":break;case"5":break;case"6":break;case"7":break;case"8":break;case"9":break;
                     case "+":
-                            if (!(Character.isDigit(cadena.substring(i-1, i).charAt(0)))){return "Error suma";}
-                            valorResultado = stackOperandos.pop() + stackOperandos.pop();
-                            stackOperandos.push(valorResultado);
+                            if (!espacio){
+                                if (!(Character.isDigit(cadena.substring(i-2, i).charAt(0)))){return "Error suma";}
+                                valorResultado = stackOperandos.pop() + stackOperandos.pop();
+                                stackOperandos.push(valorResultado);
+                            }
                             
                         break;
                     case "-":
                         
-                            if (!(Character.isDigit(cadena.substring(i-1, i).charAt(0)))){return "Error resta";}
-                            valorResultado = stackOperandos.pop() - stackOperandos.pop();
-                            stackOperandos.push(valorResultado);
+                            if (!espacio){
+                                if (!(Character.isDigit(cadena.substring(i-2, i).charAt(0)))){return "Error suma";}
+                                valorResultado = stackOperandos.pop() - stackOperandos.pop();
+                                stackOperandos.push(valorResultado);
+                            }
                         break;
                     case "*":
                         
-                            if (!(Character.isDigit(cadena.substring(i-1, i).charAt(0)))){return "Error multiplicacion";};
-                         
-                            
-                            valorResultado = stackOperandos.pop()*stackOperandos.pop();
-                            stackOperandos.push(valorResultado);
-                            
+                            if (!espacio){
+                                if (!(Character.isDigit(cadena.substring(i-2, i).charAt(0)))){return "Error suma";}
+                                valorResultado = stackOperandos.pop() * stackOperandos.pop();
+                                stackOperandos.push(valorResultado);
+                            }
                         break;
                     case "/":
-                            if (!(Character.isDigit(cadena.substring(i-1, i).charAt(0)))){return "Error division";}
+                            if (!espacio){
+                                if (!(Character.isDigit(cadena.substring(i-2, i).charAt(0)))){return "Error division";}
 
-                            if (stackOperandos.peek()!=0){
-                                
-                                valor1 = stackOperandos.pop();
-                                valor2 = stackOperandos.pop();
-                                valorResultado = valor1/valor2;
-                                stackOperandos.push(valorResultado);
+                                if (stackOperandos.peek()!=0){
 
-                            } else {return "Error division";}
-                        break;
+                                    valor1 = stackOperandos.pop();
+                                    valor2 = stackOperandos.pop();
+                                    valorResultado = valor1/valor2;
+                                    stackOperandos.push(valorResultado);
+
+                                } else {return "Error division";}
+                            
+                            }
+                        break; 
                     case " ":
-                          
-                    break; 
+                        espacio = true;
+                    break;
                     default:
                             error = true;
                             if (error){
