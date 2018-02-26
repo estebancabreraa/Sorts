@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -19,7 +20,12 @@ class gnomeSort {
     public static void main(String[] args){
             gnomeSort app = new gnomeSort();
             
-            int[] input = app.generateRandomNumbers(3000);
+            Scanner reader = new Scanner(System.in);  // Reading from System.in
+            
+            System.out.println("Enter a number: ");
+            int n = reader.nextInt();
+            
+            int[] input = app.generateRandomNumbers(n);
             
             System.out.println("GNOME SORT");
             System.out.println("");
