@@ -26,7 +26,7 @@ public class MergeSort {
             
             int[] input = app.generateRandomNumbers(3000);
             
-            System.out.println("GNOME SORT");
+            System.out.println("MERGE SORT");
             System.out.println("");
             
             System.out.println("Sort Inicial");
