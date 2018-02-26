@@ -35,22 +35,22 @@ public class RadixSort {
             
             System.out.println(" ");
             System.out.println("Sort final");
-            System.out.println(Arrays.toString(app.RadixSort(input)));
+            System.out.println(Arrays.toString(app.RadixSort(input,n)));
             
         }
     
      // The main function to that sorts arr[] of size n using
     // Radix Sort
-    private int[] RadixSort(int arr[])
+    private int[] RadixSort(int arr[], int n)
     {
         // Find the maximum number to know number of digits
-        int m = getMax(arr, 3000);
+        int m = getMax(arr, n);
  
         // Do counting sort for every digit. Note that instead
         // of passing digit number, exp is passed. exp is 10^i
         // where i is current digit number
         for (int exp = 1; m/exp > 0; exp *= 10)
-            countSort(arr, 3000, exp);
+            countSort(arr, n, exp);
         return arr;
     }
     
