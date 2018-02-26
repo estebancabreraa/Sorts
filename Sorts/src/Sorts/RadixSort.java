@@ -9,6 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
+
 
 /**
  *
@@ -18,10 +20,14 @@ public class RadixSort {
     
     public static void main(String[] args){
             RadixSort app = new RadixSort();
+            Scanner reader = new Scanner(System.in);  // Reading from System.in
             
-            int[] input = app.generateRandomNumbers(3000);
+            System.out.println("Enter a number: ");
+            int n = reader.nextInt();
             
-            System.out.println("GNOME SORT");
+            int[] input = app.generateRandomNumbers(n);
+            
+            System.out.println("RADIX SORT");
             System.out.println("");
             
             System.out.println("Sort Inicial");
